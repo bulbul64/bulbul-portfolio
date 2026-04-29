@@ -20,7 +20,15 @@ const items = [
   { id: "contact", label: "Contact", icon: MessageCircle },
 ];
 
-export const NavMenu = () => {
+type NavMenuProps = {
+  className?: string;
+  orientation?: "vertical" | "horizontal";
+};
+
+export const NavMenu = ({
+  className,
+  orientation = "horizontal",
+}: NavMenuProps) => {
   const [active, setActive] = useState("home");
 
   useEffect(() => {
@@ -59,7 +67,13 @@ export const NavMenu = () => {
   };
 
   return (
-    <nav className="flex items-center gap-1">
+    <nav
+      className={`
+        flex gap-1
+        ${orientation === "vertical" ? "flex-col items-start" : "items-center"}
+        ${className ?? ""}
+      `}
+    >
       {items.map((item) => {
         const Icon = item.icon;
         const isActive = active === item.id;
@@ -69,12 +83,14 @@ export const NavMenu = () => {
             key={item.id}
             href={`#${item.id}`}
             onClick={() => handleClick(item.id)}
-            className={`flex items-center gap-2 px-3 py-2 rounded-md text-sm transition-all duration-200
+            className={`
+              flex items-center gap-2 px-3 py-2 rounded-md text-sm transition-all duration-200
               ${
                 isActive
                   ? "bg-zinc-900 text-white dark:bg-white dark:text-black"
                   : "text-zinc-600 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800"
-              }`}
+              }
+            `}
           >
             <Icon size={16} />
             {item.label}
