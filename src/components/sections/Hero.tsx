@@ -33,7 +33,7 @@ export default function Hero({ role }: HeroProps) {
         variants={fadeUp}
         className="text-4xl md:text-5xl lg:text-6xl font-semibold capitalize md:leading-16 mt-2 max-w-3xl"
       >
-        I&apos;m <span className="text-primary">Bulbul</span>,{' '} 
+        I&apos;m <span className="text-primary">Bulbul</span>,{' '}
         <span className="inline-block relative min-w-55">
           <AnimatePresence mode="wait">
             <motion.span
@@ -56,7 +56,11 @@ export default function Hero({ role }: HeroProps) {
           <a href="#projects">My projects</a>
         </Button>
 
-        <Button variant="outline">Download CV</Button>
+        <Button asChild variant="outline">
+          <a href="/cv.pdf" download>
+            Download CV
+          </a>
+        </Button>
       </motion.div>
     </motion.section>
   );
