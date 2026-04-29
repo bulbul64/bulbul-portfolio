@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className="flex justify-center px-4 sm:px-6 lg:px-8">
       <div className="w-full max-w-6xl">
-        <main className="w-full flex flex-col mt-12">
+        <main className="w-full flex flex-col">
           <Stats />
           <Projects />
           <About />
