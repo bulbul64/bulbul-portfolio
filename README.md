@@ -7,7 +7,7 @@ This project showcases my skills, projects, experience, and contact information 
 
 ## 🌐 Live Demo
 
-👉 https://your-live-site-link.com
+👉 https://bulbul-portfolio-lilac.vercel.app/
 
 ---
 
@@ -90,10 +90,9 @@ Live: https://qurbanihat-nine.vercel.app/
 
 ## 📬 Contact
 
-- Email: your-email@example.com  
-- Phone: +8801XXXXXXXXX  
+- Phone: 01727527349  
 - GitHub: https://github.com/bulbul64  
-- LinkedIn: https://linkedin.com/in/your-profile  
+- Live Site: https://bulbul-portfolio-lilac.vercel.app/
 
 ---
 
