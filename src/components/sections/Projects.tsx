@@ -1,5 +1,3 @@
-
-
 import { motion } from 'framer-motion';
 
 import ProjectCard from '../cards/ProjectCard';
@@ -10,30 +8,29 @@ import { projectsData } from '@/data';
 export default function Projects() {
   return (
     <motion.section
-      initial='hidden'
-      whileInView='visible'
+      initial="hidden"
+      whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
       variants={staggerContainer(0)}
-      className='mt-30 scroll-mt-10'
-      id='projects'
+      className="mt-30 scroll-mt-10"
+      id="projects"
     >
-      <SectionHeader
-        subtitle='Projects'
-        title='My featured projects'
-      />
+      <SectionHeader subtitle="Projects" title="My featured projects" />
       <motion.div
-        className='grid md:grid-cols-2 gap-10 mt-10'
-        initial='hidden'
-        whileInView='visible'
+        className="grid md:grid-cols-2 gap-10 mt-10"
+        initial="hidden"
+        whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         variants={staggerContainer(0.5)}
       >
-        {projectsData.map((project, i) => (
+        {projectsData.map((project) => (
           <ProjectCard
-            key={i}
+            key={project.id}
             imgSrc={project.imgSrc}
             title={project.title}
             tags={project.tags}
+            id={project.id}
+            detailsLink={project.detailsLink}
             projectLink={project.projectLink}
           />
         ))}

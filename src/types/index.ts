@@ -1,12 +1,25 @@
-
-
-import type { ElementType,  } from 'react';
+import type { ElementType } from 'react';
 
 export type ProjectType = {
+  id: string;
+
   imgSrc: string;
   title: string;
-  tags: string[];
+
   projectLink: string;
+
+  tags: {
+    label: string;
+    link: string;
+  }[];
+
+  detailsLink: string; // ✅ add this
+
+  description?: string;
+  techStack?: string[];
+  features?: string[];
+  challenges?: string[];
+  futurePlans?: string[];
 };
 
 export type ExperienceType = {

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Controller, useForm } from "react-hook-form";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 import { Button } from "@/components/ui/button";
 import { Field, FieldError, FieldLabel } from "@/components/ui/field";
@@ -53,12 +54,31 @@ export default function Contact() {
       {/* LAYOUT */}
       <div className="mt-12 mx-auto w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-10">
 
-        {/* LEFT SIDE (ONLY FOR LARGE SCREEN) */}
+        {/* LEFT SIDE */}
         <div className="hidden lg:block">
           <SectionHeader
             subtitle="Contact"
             title="Let's make something great together!"
           />
+
+          {/* ICONS ADDED HERE */}
+          <div className="flex items-center gap-4 mt-6 ml-5 text-xl text-zinc-500">
+            <a
+              href="https://github.com/bulbul64/"
+              target="_blank"
+              className="hover:text-black dark:hover:text-white transition"
+            >
+              <FaGithub />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/shafiulla-bulbul/"
+              target="_blank"
+              className="hover:text-black dark:hover:text-white transition"
+            >
+              <FaLinkedin />
+            </a>
+          </div>
         </div>
 
         {/* RIGHT SIDE (FORM) */}
@@ -66,7 +86,6 @@ export default function Contact() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-            {/* NAME */}
             <Controller
               name="name"
               control={form.control}
@@ -79,7 +98,6 @@ export default function Contact() {
               )}
             />
 
-            {/* COMPANY */}
             <Controller
               name="company"
               control={form.control}
@@ -92,7 +110,6 @@ export default function Contact() {
               )}
             />
 
-            {/* EMAIL */}
             <Controller
               name="email"
               control={form.control}
@@ -105,7 +122,6 @@ export default function Contact() {
               )}
             />
 
-            {/* PHONE */}
             <Controller
               name="phone"
               control={form.control}
@@ -120,7 +136,6 @@ export default function Contact() {
 
           </div>
 
-          {/* MESSAGE */}
           <Controller
             name="message"
             control={form.control}
@@ -133,14 +148,9 @@ export default function Contact() {
             )}
           />
 
-          {/* BUTTONS */}
           <div className="flex gap-3">
             <Button type="submit">Submit</Button>
-            <Button
-              type="button"
-              variant="outline"
-              onClick={() => form.reset()}
-            >
+            <Button type="button" variant="outline" onClick={() => form.reset()}>
               Reset
             </Button>
           </div>
