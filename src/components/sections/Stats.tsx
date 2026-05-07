@@ -5,6 +5,7 @@ import { statsData } from '@/data';
 import { motion } from 'framer-motion';
 import { staggerContainer, fadeUp } from '@/styles/animations';
 import Hero from './Hero';
+import Image from 'next/image';
 
 const roles = ['Frontend Developer', 'Full Stack Learner'];
 
@@ -21,10 +22,29 @@ export default function Stats() {
 
   return (
     <>
-      {/* HERO (UPDATED) */}
-      <Hero role={roles[index]} />
+      {/* HERO SECTION */}
+      <section className="mt-10 flex flex-col md:flex-row items-center justify-between gap-10">
 
-      {/* STATS SECTION */}
+        {/* LEFT CONTENT */}
+        <div >
+          <Hero role={roles[index]} />
+        </div>
+
+        {/* RIGHT IMAGE */}
+        <div className="flex-1 flex justify-center md:justify-end">
+          <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-lg">
+            <Image
+              src="/images/avatar.png"
+              alt="Profile Photo"
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
+
+      </section>
+
+      {/* STATS */}
       <motion.section
         initial="hidden"
         whileInView="visible"

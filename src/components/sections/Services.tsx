@@ -15,7 +15,6 @@ export default function Services() {
       className="mt-30 scroll-mt-10"
     >
       <SectionHeader
-       
         subtitle="Services"
         title="Crafting Responsive Web Interfaces with Purpose & Precision."
       />
@@ -28,11 +27,7 @@ export default function Services() {
         className="grid md:grid-cols-2 gap-8 mt-10"
       >
         {services.map((service) => (
-          <motion.div
-            key={service.title}
-            variants={fadeUp}
-            className="h-full"
-          >
+          <motion.div key={service.title} variants={fadeUp} className="h-full">
             <ServiceCard service={service} />
           </motion.div>
         ))}

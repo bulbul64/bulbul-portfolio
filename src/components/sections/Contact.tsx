@@ -61,8 +61,8 @@ export default function Contact() {
             title="Let's make something great together!"
           />
 
-          {/* ICONS ADDED HERE */}
-          <div className="flex items-center gap-4 mt-6 ml-5 text-xl text-zinc-500">
+          {/* SOCIAL ICONS */}
+          <div className="flex items-center gap-4 mt-6 text-xl text-zinc-500 ml-5">
             <a
               href="https://github.com/bulbul64/"
               target="_blank"
@@ -78,6 +78,12 @@ export default function Contact() {
             >
               <FaLinkedin />
             </a>
+          </div>
+
+          {/* CONTACT INFO (REQ FIX) */}
+          <div className="mt-6 text-sm text-zinc-500  ml-5 space-y-1">
+            <p>Email: bbb46483@gmail.com</p>
+            <p>Phone: 01727527349</p>
           </div>
         </div>
 
