@@ -146,4 +146,59 @@ export const projectsData: ProjectType[] = [
       'Search & filtering',
     ],
   },
+  {
+  id: 'toolmart',
+
+  imgSrc: '/images/project-ph-4.png',
+  title: 'Toolmart',
+  projectLink: 'https://toolmart-mauve.vercel.app/',
+
+  detailsLink: '/projects/toolmart',
+
+  tags: [
+    {
+      label: 'Live',
+      link: 'https://toolmart-example.vercel.app/',
+    },
+    {
+      label: 'GitHub',
+      link: 'https://github.com/bulbul64/toolmart',
+    },
+  ],
+
+  description:
+    'A modern digital marketplace platform for premium AI tools, templates, and productivity resources.',
+
+  techStack: [
+    'React.js',
+    'JavaScript',
+    'Tailwind CSS',
+    'HTML5',
+    'PostCSS',
+    'Vite',
+  ],
+
+  features: [
+    'Responsive modern landing page',
+    'Pricing section with plans',
+    'Interactive cart UI',
+    'Premium tools showcase',
+    'Clean and user-friendly design',
+    'Fast and optimized performance',
+  ],
+
+  challenges: [
+    'Responsive section alignment',
+    'Pricing card structure management',
+    'Reusable UI component design',
+    'Maintaining clean user experience',
+  ],
+
+  futurePlans: [
+    'Add real payment integration',
+    'User authentication system',
+    'Wishlist functionality',
+    'Dashboard for purchased products',
+  ],
+},
 ];

@@ -1,10 +1,20 @@
+'use client';
+
 import { motion } from 'framer-motion';
-
-import type { ProjectType } from '@/types';
-
 import Image from 'next/image';
-import { fadeUp } from '@/styles/animations';
 import Link from 'next/link';
+import { Code, ExternalLink,  Star, Heart } from 'lucide-react';
+import { fadeUp } from '@/styles/animations';
+import { DiGithub } from 'react-icons/di';
+
+interface ProjectCardProps {
+  imgSrc: string;
+  title: string;
+  tags: Array<{ label: string; link?: string }>;
+  projectLink: string;
+  detailsLink: string;
+  githubLink?: string;
+}
 
 export default function ProjectCard({
   imgSrc,
@@ -12,59 +22,94 @@ export default function ProjectCard({
   tags,
   projectLink,
   detailsLink,
-}: ProjectType) {
+  githubLink,
+}: ProjectCardProps) {
   return (
-    <motion.div variants={fadeUp} className="relative">
-      <figure className="overflow-hidden h-62.5 rounded-md">
-        <a href={projectLink} target="_blank">
+    <motion.div
+      variants={fadeUp}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      className="group relative overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800/50 bg-white dark:bg-zinc-900 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+    >
+      {/* IMAGE */}
+      <figure className="relative overflow-hidden h-72">
+        <Link href={projectLink} target="_blank">
           <Image
             src={imgSrc}
-            width={500}
-            height={300}
+            width={800}
+            height={600}
             alt={title}
-            className="rounded-md transition duration-500 hover:scale-115 w-full"
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           />
-        </a>
+        </Link>
+
+        <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
       </figure>
 
-      <div className="absolute bottom-0 p-2 flex gap-2">
-        {tags.map((tag, index) => (
-          <Link
-            href={tag.link}
-            key={index}
-            className="
-        bg-white/80 text-gray-800
-        dark:bg-zinc-800 dark:text-gray-100
-
-        hover:bg-primary hover:text-black
-        dark:hover:bg-primary dark:hover:text-black
-
-        py-1 px-2 rounded-sm text-sm cursor-pointer
-
-        transition-colors duration-200
-      "
-          >
-            {tag.label}
-          </Link>
-        ))}
-
-        <Link
-          href={detailsLink}
-          target="_blank"
-          className="
-      bg-white/80 text-gray-800
-      dark:bg-zinc-800 dark:text-gray-100
-
-      hover:bg-primary hover:text-black
-      dark:hover:bg-primary dark:hover:text-black
-
-      py-1 px-2 rounded-sm text-sm cursor-pointer
-
-      transition-colors duration-200
-    "
-        >
-          Details
+      {/* CONTENT */}
+      <div className="relative p-6">
+        <Link href={projectLink} target="_blank">
+          <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-2 group-hover:text-blue-600 transition-colors">
+            {title}
+          </h3>
         </Link>
+
+        {/* TAGS */}
+        <div className="flex flex-wrap gap-2 mt-3">
+          {tags.map((tag, index) => (
+            <Link
+              href={tag.link || '#'}
+              key={index}
+              className="px-3 py-1 text-xs rounded-md bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:text-blue-600 transition"
+            >
+              {tag.label}
+            </Link>
+          ))}
+        </div>
+
+        {/* ACTIONS */}
+        <div className="flex items-center justify-between mt-4 gap-3">
+          <Link
+            href={detailsLink}
+            target="_blank"
+            className="flex items-center gap-2 px-4 py-2 rounded-lg border text-sm hover:bg-blue-50 dark:hover:bg-indigo-900/20"
+          >
+            <Code size={14} />
+            View Details
+          </Link>
+
+          {githubLink && (
+            <a
+              href={githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-2 rounded-lg border text-sm hover:bg-blue-50"
+            >
+              <DiGithub size={14} />
+              Code
+            </a>
+          )}
+
+          <a
+            href={projectLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-4 py-2 rounded-lg border text-sm hover:bg-blue-50"
+          >
+            <ExternalLink size={14} />
+            Live
+          </a>
+        </div>
+
+        {/* DECORATIVE ICONS */}
+        <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition">
+          <Heart size={14} className="text-red-500" />
+        </div>
+
+        <div className="absolute top-3 left-3 opacity-0 group-hover:opacity-100 transition">
+          <Star size={14} className="text-yellow-500" />
+        </div>
       </div>
     </motion.div>
   );

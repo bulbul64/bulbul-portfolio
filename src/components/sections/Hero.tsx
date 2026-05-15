@@ -1,6 +1,5 @@
 'use client';
 
-import { fadeUp, staggerContainer } from '@/styles/animations';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SparklesIcon } from 'lucide-react';
 import { Button } from '../ui/button';
@@ -12,37 +11,40 @@ type HeroProps = {
 export default function Hero({ role }: HeroProps) {
   return (
     <motion.section
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
-      variants={staggerContainer(0)}
-      className="pt-20"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+      className="pt-20 "
       id="hero"
     >
-      {/* SMALL TAG */}
+      {/* TAG */}
       <motion.p
-        variants={fadeUp}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2 }}
         className="flex items-center justify-center py-1 gap-2 border border-neutral-600 rounded-sm w-62"
       >
         <SparklesIcon size={15} />
         <span>Hi, I build modern web apps</span>
       </motion.p>
 
-      {/* MAIN TITLE WITH ANIMATION */}
+      {/* TITLE */}
       <motion.h1
-        variants={fadeUp}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3 }}
         className="text-4xl md:text-5xl lg:text-6xl font-semibold capitalize md:leading-16 mt-2 max-w-3xl"
       >
-        I&apos;m <span className="text-primary">Bulbul</span>,{' '}
-        <span className="inline-block relative min-w-55">
+        I&apos;m <span className="text-blue-500 ">Bulbul</span>,
+        <span className="inline-block relative whitespace-nowrap">
           <AnimatePresence mode="wait">
             <motion.span
-              key={role}
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -20, opacity: 0 }}
-              transition={{ duration: 0.4 }}
               className="inline-block"
+              key={role}
+              initial={{ opacity: 0, y: 20, filter: 'blur(6px)' }}
+              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              exit={{ opacity: 0, y: -20, filter: 'blur(6px)' }}
+              transition={{ duration: 0.5 }}
             >
               {role}
             </motion.span>
@@ -51,7 +53,12 @@ export default function Hero({ role }: HeroProps) {
       </motion.h1>
 
       {/* BUTTONS */}
-      <motion.div variants={fadeUp} className="mt-5 flex gap-2">
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5 }}
+        className="mt-5 flex gap-2"
+      >
         <Button asChild>
           <a href="#projects">My projects</a>
         </Button>

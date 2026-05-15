@@ -1,8 +1,13 @@
+'use client';
+
 import { motion } from 'framer-motion';
+
 import SectionHeader from '../shared/SectionHeader';
-import { fadeUp, staggerContainer } from '@/styles/animations';
-import { services } from '@/data';
 import ServiceCard from '../cards/ServiceCard';
+
+import { services } from '@/data/services';
+
+import { fadeUp, staggerContainer } from '@/styles/animations';
 
 export default function Services() {
   return (
@@ -16,18 +21,15 @@ export default function Services() {
     >
       <SectionHeader
         subtitle="Services"
-        title="Crafting Responsive Web Interfaces with Purpose & Precision."
+        title="Crafting Responsive Web Interfaces"
       />
 
       <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
         variants={staggerContainer(0.5)}
         className="grid md:grid-cols-2 gap-8 mt-10"
       >
         {services.map((service) => (
-          <motion.div key={service.title} variants={fadeUp} className="h-full">
+          <motion.div key={service.title} variants={fadeUp}>
             <ServiceCard service={service} />
           </motion.div>
         ))}
