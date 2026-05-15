@@ -126,7 +126,7 @@ export default function Stats() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={staggerContainer(0.15)}
-        className="relative px-4 py-20 sm:px-6 lg:px-8"
+        className="relative px-4  sm:px-6 lg:px-8"
       >
         <div className="mx-auto max-w-7xl">
           {/* Section Heading */}

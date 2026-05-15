@@ -8,7 +8,7 @@ import { Logo } from '../logo';
 const Navbar = () => {
   return (
     <nav
-      className="sticky top-0 z-50 h-16 
+      className="sticky top-0 z-50 h-16
         border-b border-white/20 dark:border-white/10 
         bg-white/30 dark:bg-zinc-900/30 
         backdrop-blur-xl shadow-sm"
