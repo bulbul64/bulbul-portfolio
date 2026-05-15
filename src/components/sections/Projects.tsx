@@ -14,7 +14,7 @@ export default function Projects() {
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
       variants={staggerContainer(0)}
-      className="mt-20 scroll-mt-10 px-4 sm:px-6 lg:px-8 pb-20"
+      className="mt-30 scroll-mt-10 px-4 sm:px-6 lg:px-8 pb-20"
       id="projects"
     >
       {/* SECTION HEADER */}

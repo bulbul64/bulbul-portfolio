@@ -1,0 +1,23 @@
+<svg width="64" height="64" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="95" fill="#f8faff"></circle>
+
+  <!-- Main Group -->
+  <g transform="translate(100,100)">
+
+    <!-- Outer Ring -->
+    <circle cx="0" cy="0" r="60" fill="none" stroke="#2563eb" stroke-width="4" stroke-linecap="round"></circle>
+
+    <!-- Letter B -->
+    <path d="M-40 -30 L-40 30 M-25 -30 L-25 30 M-15 -30 L15 30 L15 -60 Z" fill="#2563eb"></path>
+
+    <!-- Left Brackets -->
+    <path d="M-40 -50 L-35 -48 M-38 -50 L-35 -45 M-40 10 L-35 12 M-38 10 L-35 15" fill="none" stroke="#1e293b" stroke-width="3"></path>
+
+    <!-- Right Brackets -->
+    <path d="M40 -50 L45 -48 M42 -50 L45 -45 M40 10 L45 12 M42 10 L45 15" fill="none" stroke="#1e293b" stroke-width="3"></path>
+
+  </g>
+
+</svg>

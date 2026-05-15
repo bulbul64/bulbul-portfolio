@@ -33,13 +33,13 @@ export default function Hero({ role }: HeroProps) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
-        className="text-4xl md:text-5xl lg:text-6xl font-semibold capitalize md:leading-16 mt-2 max-w-3xl"
+        className=" font-black relative z-10 text-xl md:text-2xl lg:text-4xl capitalize md:leading-16 mt-2 max-w-3xl"
       >
-        I&apos;m <span className="text-blue-500 ">Bulbul</span>,
+        I&apos;m <span className="text-blue-500">Bulbul</span>,
         <span className="inline-block relative whitespace-nowrap">
           <AnimatePresence mode="wait">
             <motion.span
-              className="inline-block"
+              className="inline-block font-black relative z-10 text-xl md:text-2xl lg:text-4xl"
               key={role}
               initial={{ opacity: 0, y: 20, filter: 'blur(6px)' }}
               animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}

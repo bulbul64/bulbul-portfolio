@@ -20,7 +20,7 @@ export default function SectionHeader({
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="flex flex-col items-center md:items-start text-center md:text-left "
+      className="flex flex-col items-center  md:items-start text-center md:text-left "
     >
       {/* SUBTITLE (Optional) */}
       <AnimatePresence mode="wait">
@@ -44,7 +44,7 @@ export default function SectionHeader({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
-        className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold capitalize leading-tight max-w-4xl tracking-tight"
+        className="mt-3 font-black relative z-10 text-xl md:text-2xl lg:text-4xl capitalize leading-tight max-w-4xl tracking-tight"
       >
         {title}
       </motion.h1>

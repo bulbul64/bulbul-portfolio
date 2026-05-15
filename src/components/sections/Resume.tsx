@@ -115,7 +115,7 @@ export default function Resume() {
           viewport={{ once: true }}
           className="text-3xl font-semibold mb-4 text-zinc-900 dark:text-white"
         >
-          <span className="relative z-10 flex items-center justify-center gap-2">
+          <span className="relative z-10 font-black flex items-center justify-center gap-2">
             Tech Stack
             <svg
               viewBox="0 0 24 24"
@@ -188,33 +188,41 @@ interface TechStackItemProps {
 }
 
 function TechStackItem({ iconName, label, delay }: TechStackItemProps) {
-  // Add type safety and fallback for Icons
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const Icon = (Icons as Record<string, React.FC<any>>)[iconName] || Icons['default'];
+  const Icon =
+    (Icons as Record<string, React.FC<any>>)[iconName] ||
+    Icons["default"];
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 15 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay, ease: [0.25, 0.46, 0.45, 0.94] }}
-      className="flex flex-col items-center justify-center rounded-xl border p-4 
-                 bg-linear-to-br from-white/80 via-transparent to-blue-50/10 dark:from-zinc-900/80 
-                 dark:via-zinc-900/90 dark:to-indigo-900/10 backdrop-blur-sm
-                 border-blue-100 dark:border-zinc-800 shadow-sm hover:shadow-lg transition-all duration-300
-                 group hover:-translate-y-1 hover:border-blue-500/40 "
+      transition={{ duration: 0.4, delay }}
+      className="
+        flex flex-col items-center justify-center
+        rounded-xl p-4
+        bg-white dark:bg-zinc-900/40
+        border border-zinc-200 dark:border-zinc-800
+        shadow-sm hover:shadow-md
+        transition-all duration-300
+        group hover:-translate-y-1
+      "
     >
-      <motion.div
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        whileHover={{ scale: 1.15, rotate: [0, -3, 3, 0] }}
-        transition={{ duration: 0.3 }}
-        className="p-3 rounded-lg bg-linear-to-br from-blue-600 via-purple-600 to-indigo-600 text-white shadow-lg"
+      {/* ICON WRAPPER */}
+      <div
+        className="
+          p-2.5 rounded-lg
+          bg-zinc-100 dark:bg-zinc-800
+          text-zinc-700 dark:text-zinc-200
+          group-hover:bg-blue-600 group-hover:text-white
+          transition-all duration-300
+        "
       >
-        <Icon className="w-7 h-7" />
-      </motion.div>
+        <Icon className="w-6 h-6" />
+      </div>
 
-      <p className="mt-3 text-sm font-semibold text-zinc-600 dark:text-zinc-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+      {/* LABEL */}
+      <p className="mt-3 text-sm font-medium text-zinc-600 dark:text-zinc-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
         {label}
       </p>
     </motion.div>

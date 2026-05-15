@@ -163,16 +163,6 @@ export default function Stats() {
               My Stats
             </h1>
 
-            <h2
-              className="
-                text-4xl font-black tracking-tight
-
-                text-zinc-900
-                dark:text-white
-              "
-            >
-              By The Numbers
-            </h2>
           </div>
 
           {/* Stats Grid */}
