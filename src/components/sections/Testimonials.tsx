@@ -206,7 +206,7 @@ export default function Testimonials() {
         </div>
 
         <div className="absolute -top-3 -right-3 w-16 h-16 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 right-0 w-full h-full bg-linear-to-bl from-purple-500 to-blue-500 dark:from-indigo-900 dark:to-blue-900 opacity-20" />
+          <div className="absolute top-0 right-0 w-full h-full bg-linear-to-bl from-purple-500 to-blue-500 dark:from-indigo-900 dark:to-blue-900 opacity-19" />
         </div>
       </div>
     </motion.section>
